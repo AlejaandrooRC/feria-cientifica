@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>InGen Meteorological Laboratory</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+  <!-- Líneas cinéticas suaves de fondo -->
+  <canvas id="animeSpeedCanvas"></canvas>
+
+  <div class="astoria-wrapper">
+    
+    <!-- BARRA DE NAVEGACIÓN SUPERIOR ESTILO RPG -->
+    <header class="astoria-header">
+      <div class="header-left">
+        <span class="brand-title">INGEN // CORE</span>
+        <span class="badge-status">METEOROLOGICAL DATA</span>
+      </div>
+      <nav class="astoria-nav">
+        <a href="#panel-intro">01. Plataforma</a>
+        <a href="#panel-objetivos">02. Metas</a>
+        <a href="#panel-metodo">03. Proceso</a>
+        <a href="#panel-materiales">04. Hardware</a>
+        <a href="#panel-conexiones">05. Mapeo</a>
+        <a href="#panel-resultados">06. Conclusión</a>
+      </nav>
+    </header>
+
+    <!-- BANNER PRINCIPAL CON IMAGEN ESTILO DETRÁS DE LAS CERCAS -->
+    <div class="astoria-hero">
+      <div class="hero-overlay">
+        <h1 class="hero-title">JURASSIC PARK</h1>
+        <h2 class="hero-subtitle">ESTACIÓN METEOROLÓGICA AUTOMATIZADA</h2>
+        <p class="hero-tagline">NÚCLEO DE ASIGNACIÓN ARDUINO UNO // CONTROL DE ENTORNO CRÍTICO</p>
+      </div>
+    </div>
+
+    <!-- SECCIÓN DE CONTENIDO RESTRUCTURADO -->
+    <main class="astoria-grid">
+      
+      <!-- SECCIÓN 1: ¿QUÉ ES ARDUINO? -->
+      <section id="panel-intro" class="astoria-card img-bg-1">
+        <div class="card-inner-blur">
+          <h3><span>✦</span> 01 // ¿QUÉ ES ARDUINO?</h3>
+          <p>Arduino es una plataforma electrónica de código abierto que se utiliza para crear proyectos tecnológicos. Está formada por una placa programable (microcontrolador) y un software donde se escribe el código para darle instrucciones. (Arduino, 2023)</p>
+          <div class="anime-quote">"El cerebro central que orquesta el monitoreo climático en los recintos."</div>
+        </div>
+      </section>
+
+      <!-- SECCIÓN 2: OBJETIVOS -->
+      <section id="panel-objetivos" class="astoria-card">
+        <h3><span>✦</span> 02 // OBJETIVOS DEL PROYECTO</h3>
+        <p><strong>Objetivo general:</strong> Construir una estación meteorológica con Arduino para medir variables ambientales como temperatura, humedad, presión o intensidad de luz y registrar datos útiles para el análisis del clima local.</p>
+        <p><strong>Objetivos específicos:</strong> Investigar componentes de campo, seleccionar sensores de alta precisión, ensamblar la placa, programar instrucciones de control y registrar el historial climático local.</p>
+      </section>
+
+      <!-- SECCIÓN 3: METODOLOGÍA -->
+      <section id="panel-metodo" class="astoria-card img-bg-2">
+        <div class="card-inner-blur">
+          <h3><span>✦</span> 03 // METODOLOGÍA Y FASES</h3>
+          <p>Investigación experimental y descriptiva estructurada para evaluar el rendimiento de la central meteorológica en tiempo real:</p>
+          <ol class="custom-list">
+            <li>Investigación documental del microcontrolador.</li>
+            <li>Selección de componentes de lectura analógica.</li>
+            <li>Esquematización del circuito en protoboard.</li>
+            <li>Desarrollo de instrucciones de código.</li>
+            <li>Fase de pruebas y calibración perimetral.</li>
+          </ol>
+        </div>
+      </section>
+
+      <!-- SECCIÓN 4: MATERIALES -->
+      <section id="panel-materiales" class="astoria-card">
+        <h3><span>✦</span> 04 // MATERIALES DE CAMPO</h3>
+        <p>Hardware integrado para la recolección y lectura de variables meteorológicas:</p>
+        <ul class="materials-grid">
+          <li>Placa Arduino Uno</li>
+          <li>Sensor DHT11 / DHT22</li>
+          <li>Barómetro BMP180</li>
+          <li>Sensor de luz LDR</li>
+          <li>Pantalla OLED 0.91"</li>
+          <li>Protoboard y Jumpers</li>
+          <li>Computadora / Cable USB</li>
+          <li>Fuente de alimentación</li>
+        </ul>
+      </section>
+
+      <!-- SECCIÓN 5: TABLA DE CONEXIONES (ANCHO COMPLETO) -->
+      <section id="panel-conexiones" class="astoria-card span-2">
+        <h3><span>✦</span> 05 // ESQUEMA DE CONEXIONES DE PINES</h3>
+        <p class="table-desc">Mapeo del cableado del microcontrolador para el procesamiento de variables electrónicas:</p>
+        <div class="table-wrapper">
+          <table class="rpg-table">
+            <thead>
+              <tr>
+                <th>Módulo Integrado</th>
+                <th>Pin del Sensor</th>
+                <th>Pin Arduino UNO</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td rowspan="3" class="td-highlight">OLED 0.91"</td>
+                <td>VCC / GND</td>
+                <td class="td-code">5V / GND</td>
+              </tr>
+              <tr>
+                <td>SCL</td>
+                <td class="td-code">A5 (SCL)</td>
+              </tr>
+              <tr>
+                <td>SDA</td>
+                <td class="td-code">A4 (SDA)</td>
+              </tr>
+              <tr>
+                <td rowspan="2" class="td-highlight">DHT22 / BMP180</td>
+                <td>VCC / GND</td>
+                <td class="td-code">5V / GND</td>
+              </tr>
+              <tr>
+                <td>DATA / SDA</td>
+                <td class="td-code">Pin Digital / A4</td>
+              </tr>
+              <tr>
+                <td rowspan="2" class="td-highlight">Sensor LDR (Luz)</td>
+                <td>VCC / GND</td>
+                <td class="td-code">5V / GND</td>
+              </tr>
+              <tr>
+                <td>A0</td>
+                <td class="td-code">A0 (Analógico)</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- SECCIÓN 6: RESULTADOS Y PROBLEMA -->
+      <section id="panel-resultados" class="astoria-card">
+        <h3><span>✦</span> 06 // RESULTADOS Y DISCUSIÓN</h3>
+        <p><strong>Resultados:</strong> El desarrollo fue un proceso retador, logrando un sistema funcional que ayuda a determinar el clima de forma accesible y económica.</p>
+        <p><strong>Planteamiento del problema:</strong> Las escuelas carecen de herramientas en tiempo real debido al alto costo de equipos profesionales. Arduino rompe esta barrera, facilitando el aprendizaje de tecnología y ciencias.</p>
+      </section>
+
+      <!-- SECCIÓN 7: CONCLUSIÓN PANAMÁ (ANCHO COMPLETO) -->
+      <section id="panel-conclusion" class="astoria-card span-2 final-accent">
+        <h3><span>✦</span> 07 // CONCLUSIÓN ANÁLISIS EN CAMPO</h3>
+        <div class="conclusion-box">
+          <p>A través del procesamiento continuo de datos ambientales, se concluye que el clima de <strong>Panamá</strong> es sumamente variado, húmedo y cambiante, consolidando la necesidad de implementar sistemas automatizados de bajo costo para su estudio práctico.</p>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- PIE DE PÁGINA ESTILO RECUADRO MANGA -->
+    <footer class="astoria-footer">
+      <span class="footer-left">"LA CIENCIA TAMBIÉN DEJA HUELLA"</span>
+      <span class="footer-right">JURASSIC PARK // INGEN SYSTEM © 2026</span>
+    </footer>
+  </div>
+
+  <script src="./script.js"></script>
+</body>
+</html>

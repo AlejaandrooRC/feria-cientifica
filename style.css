@@ -1,0 +1,230 @@
+:root {
+  --main-dark: #12141a;
+  --panel-bg: #1c1f26;
+  --accent-red: #a93232;
+  --text-light: #e2e8f0;
+  --text-muted: #8a99ad;
+  --border-subtle: #2d323f;
+}
+
+body {
+  background-color: var(--main-dark);
+  color: var(--text-light);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 10px;
+  overflow-x: hidden;
+}
+
+/* Efecto de líneas de velocidad anime de fondo */
+#animeSpeedCanvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* CONTENEDOR ESTILO WEB ANIME RPG */
+.astoria-wrapper {
+  position: relative;
+  z-index: 2;
+  max-width: 1100px;
+  margin: 20px auto;
+  background-color: #171921;
+  border: 1px solid var(--border-subtle);
+  box-shadow: 0 40px 90px rgba(0,0,0,0.85);
+}
+
+/* BARRA DE NAVEGACIÓN SUPERIOR ESTILO INTERFAZ ANIME */
+.astoria-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 30px;
+  background-color: #0f1115;
+  border-bottom: 1px solid var(--border-subtle);
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.brand-title {
+  font-family: 'Arial Black', sans-serif;
+  font-weight: 900;
+  letter-spacing: 3px;
+  font-size: 1.1rem;
+  color: #fff;
+}
+
+.badge-status {
+  font-family: monospace;
+  font-size: 0.75rem;
+  color: var(--accent-red);
+  border: 1px solid var(--accent-red);
+  padding: 2px 8px;
+  margin-left: 10px;
+}
+
+.astoria-nav {
+  display: flex;
+  gap: 15px;
+}
+
+.astoria-nav a {
+  color: var(--text-muted);
+  text-decoration: none;
+  font-size: 0.8rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: color 0.3s;
+}
+
+.astoria-nav a:hover {
+  color: #fff;
+  border-bottom: 2px solid var(--accent-red);
+}
+
+/* HERO BANNER - DISEÑO MAXIMALISTA CON IMAGEN SELVÁTICA */
+.astoria-hero {
+  height: 320px;
+  background-image: url('https://unsplash.com');
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: linear-gradient(to right, rgba(15,17,21,0.95) 30%, rgba(15,17,21,0.4) 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 40px;
+}
+
+.hero-title {
+  font-family: 'Arial Black', sans-serif;
+  font-size: 3.5rem;
+  letter-spacing: 5px;
+  margin: 0;
+  color: #fff;
+  text-shadow: 2px 2px 0px var(--accent-red);
+  line-height: 1;
+}
+
+.hero-subtitle {
+  font-size: 1.2rem;
+  color: var(--text-light);
+  letter-spacing: 2px;
+  margin: 10px 0 0 0;
+}
+
+.hero-tagline {
+  font-family: monospace;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  letter-spacing: 2px;
+  margin-top: 15px;
+}
+
+/* INTERFAZ DE TARJETAS EN CUADRÍCULA */
+.astoria-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+  padding: 45px 35px;
+}
+
+@media (max-width: 850px) {
+  .astoria-grid { grid-template-columns: 1fr; }
+  .span-2 { grid-column: span 1 !important; }
+}
+
+.span-2 { grid-column: span 2; }
+
+.astoria-card {
+  background-color: var(--panel-bg);
+  border: 1px solid var(--border-subtle);
+  padding: 30px;
+  position: relative;
+  transition: transform 0.3s, border-color 0.3s;
+}
+
+.astoria-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--accent-red);
+}
+
+/* INTEGRACIÓN DE IMÁGENES DENTRO DE LAS TARJETAS */
+.img-bg-1 {
+  background-image: url('https://unsplash.com');
+  background-size: cover; background-position: center; padding: 0;
+}
+
+.img-bg-2 {
+  background-image: url('https://unsplash.com');
+  background-size: cover; background-position: center; padding: 0;
+}
+
+.card-inner-blur {
+  padding: 30px;
+  height: 100%;
+  background: rgba(28, 31, 38, 0.85);
+  backdrop-filter: blur(4px);
+}
+
+.astoria-card h3 {
+  margin-top: 0;
+  font-size: 1.05rem;
+  letter-spacing: 2px;
+  color: #fff;
+  border-bottom: 1px solid var(--border-subtle);
+  padding-bottom: 12px;
+  margin-bottom: 18px;
+}
+
+.astoria-card h3 span { color: var(--accent-red); }
+.astoria-card p { font-size: 0.95rem; line-height: 1.7; color: #cbd5e1; }
+
+/* LISTAS Y RECUADROS ESTILIZADOS */
+.custom-list, .materials-grid {
+  padding-left: 20px; color: #cbd5e1; font-size: 0.95rem; line-height: 1.7;
+}
+.custom-list li, .materials-grid li { margin-bottom: 8px; }
+
+.materials-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 5px; list-style-type: square;
+}
+
+.anime-quote {
+  font-style: italic; border-left: 3px solid var(--accent-red); padding-left: 15px;
+  color: var(--text-muted); font-size: 0.9rem; margin-top: 20px;
+}
+
+/* DISEÑO DE TABLA PREMIUM */
+.table-desc { font-size: 0.85rem !important; color: var(--text-muted); margin-bottom: 15px; }
+.table-wrapper { overflow-x: auto; }
+.rpg-table {
+  width: 100%; border-collapse: collapse; background: #0f1115; font-size: 0.9rem;
+}
+.rpg-table th, .rpg-table td { border: 1px solid var(--border-subtle); padding: 12px; text-align: left; }
+.rpg-table th { background-color: rgba(169, 50, 50, 0.15); color: #fff; font-weight: bold; letter-spacing: 1px; }
+.td-highlight { font-weight: bold; color: var(--accent-red); font-family: monospace; }
+.td-code { font-family: monospace; color: var(--text-muted); }
+
+/* SECCIÓN FINAL CONCLUSIÓN */
+.final-accent { border-left: 4px solid var(--accent-red); }
+.conclusion-box p { font-size: 1.1rem; line-height: 1.8; color: #fff; }
+
+/* PIE DE PÁGINA */
+.astoria-footer {
+  background-color: #0f1115; padding: 25px 35px; border-top: 1px solid var(--border-subtle);
+  display: flex; justify-content: space-between; align-items: center;
+  font-family: monospace; font-size: 0.8rem; color: var(--text-muted); letter-spacing: 1px; flex-wrap: wrap; gap: 15px;
+}
+.footer-left { font-weight: bold; color: #fff; }
