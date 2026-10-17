@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>InGen Central Terminal - Isla Nublar Poster</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+  <!-- Red decorativa de partículas fósiles en movimiento -->
+  <canvas id="grid3dCanvas"></canvas>
+
+  <div class="fossil-container">
+    
+    <!-- ENCABEZADO MAXIMALISTA -->
+    <header class="fossil-header">
+      <div class="fossil-badge">CRITICAL RESEARCH DATA // ISLA NUBLAR</div>
+      <h1>JURASSIC PARK</h1>
+      <h2>ESTACIÓN METEOROLÓGICA</h2>
+      <p class="fossil-subtitle">MONITOREANDO EL CLIMA • PROYECTO ARDUINO UNO</p>
+    </header>
+
+    <!-- NAVEGACIÓN AGRESIVA ESTILO LOGÍSTICA INGEN -->
+    <nav class="fossil-nav">
+      <a href="#panel-intro">01 // PLATAFORMA</a>
+      <a href="#panel-objetivos">02 // METAS</a>
+      <a href="#panel-metodo">03 // PROCESO</a>
+      <a href="#panel-materiales">04 // HARDWARE</a>
+      <a href="#panel-conexiones">05 // MAPEO_PIN</a>
+      <a href="#panel-resultados">06 // REPORTES</a>
+    </nav>
+
+    <!-- CUERPO DE PANELES EN CAPAS Y SUPERPUESTOS -->
+    <main class="fossil-layout">
+      
+      <!-- BLOQUE 1: ¿QUÉ ES ARDUINO? -->
+      <section id="panel-intro" class="fossil-card texturised-bg-1">
+        <div class="card-overlay-dino"></div>
+        <h3><span>[01]</span> ¿QUÉ ES ARDUINO?</h3>
+        <p>Arduino es una plataforma electrónica de código abierto que se utiliza para crear proyectos tecnológicos. Está formada por una placa programable (microcontrolador) y un software donde se escribe el código para darle instrucciones. (Arduino, 2023)</p>
+        <div class="fossil-alert-text">CEREBRO DEL PROTOTIPO ACTIVADO</div>
+      </section>
+
+      <!-- BLOQUE 2: OBJETIVOS -->
+      <section id="panel-objetivos" class="fossil-card card-bone texturised-bg-2">
+        <h3><span>[02]</span> OBJETIVOS GENERALES Y ESPECÍFICOS</h3>
+        <p><strong>Objetivo general:</strong> Construir una estación meteorológica con Arduino para medir variables ambientales como temperatura, humedad, presión o intensidad de luz y registrar datos útiles para el análisis del clima local.</p>
+        <p><strong>Objetivos específicos:</strong> Investigar componentes, seleccionar instrumental preciso, construir el circuito electrónico, programar el microcontrolador y procesar logs ambientales.</p>
+      </section>
+
+      <!-- BLOQUE 3: METODOLOGÍA -->
+      <section id="panel-metodo" class="fossil-card texturised-bg-3">
+        <h3><span>[03]</span> METODOLOGÍA EXPERIMENTAL</h3>
+        <p>Investigación de tipo experimental y descriptiva orientada al ensamblaje de un prototipo funcional bajo las siguientes fases:</p>
+        <ol class="fossil-list">
+          <li>Investigación base de estaciones meteorológicas.</li>
+          <li>Selección analógica de sensores.</li>
+          <li>Diseño del esquema de conexiones.</li>
+          <li>Codificación e instrucciones de software.</li>
+          <li>Pruebas de estrés y calibración en campo.</li>
+        </ol>
+      </section>
+
+      <!-- BLOQUE 4: MATERIALES -->
+      <section id="panel-materiales" class="fossil-card card-bone texturised-bg-1">
+        <h3><span>[04]</span> COMPONENTES Y MATERIALES</h3>
+        <ul class="fossil-list grid-materials">
+          <li>Placa Arduino Uno</li>
+          <li>Sensor DHT11 / DHT22</li>
+          <li>Barómetro BMP180</li>
+          <li>Sensor de luz LDR</li>
+          <li>Pantalla OLED 0.91"</li>
+          <li>Protoboard y Jumpers</li>
+          <li>Computadora / Cable USB</li>
+          <li>Fuente de alimentación</li>
+        </ul>
+      </section>
+
+      <!-- BLOQUE 5: MAPEO DE PINES Y CONEXIONES (ANCHO COMPLETO) -->
+      <section id="panel-conexiones" class="fossil-card span-full texturised-bg-4">
+        <h3><span>[05]</span> ARQUITECTURA VISUAL DE CONEXIONES</h3>
+        <p>Esquema técnico para la distribución de voltajes y pines analógicos/digitales en el Arduino UNO:</p>
+        <div class="table-scroll">
+          <table class="fossil-table">
+            <thead>
+              <tr>
+                <th>Módulo Electrónico</th>
+                <th>Pin del Sensor</th>
+                <th>Pin de Entrada Arduino</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td rowspan="4" class="highlight-td">Pantalla OLED 0.91"</td>
+                <td>VCC / GND</td>
+                <td>5V / GND</td>
+              </tr>
+              <tr>
+                <td>SCL</td>
+                <td>A5 (Reloj Analógico)</td>
+              </tr>
+              <tr>
+                <td>SDA</td>
+                <td>A4 (Datos Analógicos)</td>
+              </tr>
+              <tr style="display:none"><td></td><td></td></tr> <!-- Celda fantasma estructural -->
+              <tr>
+                <td rowspan="3" class="highlight-td">DHT22 / BMP180</td>
+                <td>VCC / GND</td>
+                <td>5V / GND</td>
+              </tr>
+              <tr>
+                <td>DATA / SDA</td>
+                <td>Pin Digital / A4</td>
+              </tr>
+              <tr style="display:none"><td></td><td></td></tr>
+              <tr>
+                <td rowspan="2" class="highlight-td">Sensor Fotoresistencia LDR</td>
+                <td>VCC / GND</td>
+                <td>5V / GND</td>
+              </tr>
+              <tr>
+                <td>A0</td>
+                <td>A0 (Señal Analógica)</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- BLOQUE 6: RESULTADOS Y DISCUSIÓN -->
+      <section id="panel-resultados" class="fossil-card texturised-bg-2">
+        <h3><span>[06]</span> RESULTADOS DEL PROTOTIPO</h3>
+        <p>El desarrollo fue un proceso curioso y retador que integró programación y electrónica. El resultado fue un éxito satisfactorio, logrando un sistema operativo capaz de registrar condiciones ambientales de forma práctica y económica.</p>
+        <div class="success-badge">ESTADO: 100% OPERATIVO</div>
+      </section>
+
+      <!-- BLOQUE 7: ANÁLISIS DE LA DISCUSIÓN -->
+      <section id="panel-discusion" class="fossil-card card-bone texturised-bg-3">
+        <h3><span>[07]</span> PLANTEAMIENTO Y DISCUSIÓN</h3>
+        <p>Los centros educativos carecen de herramientas de medición en tiempo real debido al alto costo de las estaciones meteorológicas profesionales. Con Arduino se rompe esta barrera, facilitando proyectos de bajo costo que estimulan el aprendizaje de ciencias aplicadas y programación.</p>
+      </section>
+
+      <!-- BLOQUE 8: CONCLUSIÓN DE PANAMÁ (ANCHO COMPLETO) -->
+      <section id="panel-conclusion" class="fossil-card span-full texturised-bg-1 final-border">
+        <h3><span>[08]</span> CONCLUSIÓN DEL ANÁLISIS EN CAMPO</h3>
+        <p class="panama-highlight">A través de las mediciones registradas, se determinó de manera concluyente que el clima de <strong>Panamá</strong> es altamente variado, húmedo y cambiante, validando la necesidad de implementar redes de monitoreo automatizadas de bajo costo.</p>
+      </section>
+
+    </main>
+
+    <!-- PIE DE PÁGINA IMPERIAL -->
+    <footer class="fossil-footer">
+      <div class="footer-slogan">LA CIENCIA TAMBIÉN DEJA HUELLA</div>
+      <div class="footer-logo">JURASSIC PARK</div>
+    </footer>
+  </div>
+
+  <script src="./script.js"></script>
+</body>
+</html>
